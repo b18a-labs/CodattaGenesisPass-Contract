@@ -48,7 +48,7 @@ contract CodattaGenesisPassNFT is Initializable, ERC721Upgradeable, OwnableUpgra
         addressToTokenId[msg.sender] = _currentTokenId;
     }
 
-    function currentTokenId() public view returns (uint256) {
+    function currentTokenId() external view returns (uint256) {
         return _currentTokenId;
     }
 
@@ -82,7 +82,7 @@ contract CodattaGenesisPassNFT is Initializable, ERC721Upgradeable, OwnableUpgra
         signer = _signer;
     }
 
-    function setDefaultURI(string calldata uri) public onlyOwner {
+    function setDefaultURI(string calldata uri) external onlyOwner {
         _defaultURI = uri;
     }
     
